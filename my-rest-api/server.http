@@ -1,0 +1,63 @@
+@local=http://localhost:3900
+
+### sign up
+POST {{local}}/api/users
+Content-Type: application/json
+
+{
+    "name": "shalom",
+    "password": "shalom1234",
+    "email": "shalom@gmail.com",
+    "biz": false
+}
+
+### sign in
+POST {{local}}/api/auth
+Content-Type: application/json
+
+{
+    "password": "shalom1234",
+    "email": "shalom@gmail.com"
+}
+
+### me
+GET {{local}}/api/users/me
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWRlZmQwYjgyMmZmYzZiYTQwNDgxNDEiLCJiaXoiOmZhbHNlLCJpYXQiOjE2NDIwMDM3MzZ9.vUnUhdO72liZHzR7doIBs-yO-wDNGXRO0e7GvQ7v90E
+
+### create card 
+POST  {{local}}/api/cards
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWRlZmQwYjgyMmZmYzZiYTQwNDgxNDEiLCJiaXoiOmZhbHNlLCJpYXQiOjE2NDIwMDM3MzZ9.vUnUhdO72liZHzR7doIBs-yO-wDNGXRO0e7GvQ7v90E
+Content-Type: application/json
+
+{
+"bizName": "shalom electronics",
+"bizDescription": "shalom world",
+"bizAddress": "alenbi 50 tel aviv",
+"bizPhone": "0528905643",
+"bizImage": "https://cdn.pixabay.com/photo/2014/08/05/10/27/iphone-410311_960_720.jpg"
+}
+
+### get card by id
+GET {{local}}/api/cards/61defd5f822ffc6ba404814d
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWRlZmQwYjgyMmZmYzZiYTQwNDgxNDEiLCJiaXoiOmZhbHNlLCJpYXQiOjE2NDIwMDM3MzZ9.vUnUhdO72liZHzR7doIBs-yO-wDNGXRO0e7GvQ7v90E
+
+### update card
+PUT {{local}}/api/cards/61defd5f822ffc6ba404814d
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWRlZmQwYjgyMmZmYzZiYTQwNDgxNDEiLCJiaXoiOmZhbHNlLCJpYXQiOjE2NDIwMDM3MzZ9.vUnUhdO72liZHzR7doIBs-yO-wDNGXRO0e7GvQ7v90E
+Content-Type: application/json
+
+{
+"bizName": "shalom's restaurant",
+"bizDescription": "shalom's delicious food",
+"bizAddress": "ziv 22 afula",
+"bizPhone": "027654321",
+"bizImage": "https://cdn.pixabay.com/photo/2017/05/10/21/25/vacation-2302009_960_720.jpg"
+}
+
+### delete card
+DELETE {{local}}/api/cards/61defd5f822ffc6ba404814d
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWRlZmQwYjgyMmZmYzZiYTQwNDgxNDEiLCJiaXoiOmZhbHNlLCJpYXQiOjE2NDIwMDM3MzZ9.vUnUhdO72liZHzR7doIBs-yO-wDNGXRO0e7GvQ7v90E
+
+### get user cards 
+GET {{local}}/api/cards
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWRlZmQwYjgyMmZmYzZiYTQwNDgxNDEiLCJiaXoiOmZhbHNlLCJpYXQiOjE2NDIwMDM3MzZ9.vUnUhdO72liZHzR7doIBs-yO-wDNGXRO0e7GvQ7v90E
